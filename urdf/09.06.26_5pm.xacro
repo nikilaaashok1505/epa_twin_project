@@ -1,0 +1,331 @@
+<?xml version="1.0" ?>
+<robot name="09.06.26_5pm" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="./materials.xacro" />
+<xacro:include filename="./09.06.26_5pm.trans" />
+<xacro:include filename="./09.06.26_5pm.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="-0.10238687658247528 0.07899999999999985 0.2672490830517451" rpy="0 0 0"/>
+    <mass value="0.6541304380247976"/>
+    <inertia ixx="0.001161" iyy="0.001238" izz="0.00114" ixy="-0.0" iyz="0.0" ixz="3.8e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file:///home/krishna/bumperbot_ws/src/09.06.26_5pm_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file:///home/krishna/bumperbot_ws/src/09.06.26_5pm_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="actuator_1_v1_1">
+  <inertial>
+    <origin xyz="-1.1412289121354169e-07 0.007250499999999868 -3.278807773898773e-07" rpy="0 0 0"/>
+    <mass value="0.025332587754889873"/>
+    <inertia ixx="4e-06" iyy="6e-06" izz="4e-06" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.05457 -0.048912 -0.204524" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file:///home/krishna/bumperbot_ws/src/09.06.26_5pm_description/meshes/actuator_1_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.05457 -0.048912 -0.204524" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file:///home/krishna/bumperbot_ws/src/09.06.26_5pm_description/meshes/actuator_1_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="actuator_2_v1_1">
+  <inertial>
+    <origin xyz="-1.1412289123435837e-07 -0.007249500000000034 -3.278807774176329e-07" rpy="0 0 0"/>
+    <mass value="0.025332587754889873"/>
+    <inertia ixx="4e-06" iyy="6e-06" izz="4e-06" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.05457 -0.109087 -0.204524" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file:///home/krishna/bumperbot_ws/src/09.06.26_5pm_description/meshes/actuator_2_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.05457 -0.109087 -0.204524" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file:///home/krishna/bumperbot_ws/src/09.06.26_5pm_description/meshes/actuator_2_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="hip_clevis_v1_1">
+  <inertial>
+    <origin xyz="0.007334968870516073 -0.015587999989115475 -0.02211352849978912" rpy="0 0 0"/>
+    <mass value="0.034362694114534874"/>
+    <inertia ixx="1.2e-05" iyy="1e-05" izz="7e-06" ixy="-0.0" iyz="0.0" ixz="2e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.05457 -0.094588 -0.204524" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file:///home/krishna/bumperbot_ws/src/09.06.26_5pm_description/meshes/hip_clevis_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.05457 -0.094588 -0.204524" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file:///home/krishna/bumperbot_ws/src/09.06.26_5pm_description/meshes/hip_clevis_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="leg_1_rod_v1_1">
+  <inertial>
+    <origin xyz="0.042767405156213176 -8.326672684688674e-17 -0.12893123144354507" rpy="0 0 0"/>
+    <mass value="0.05716103390617287"/>
+    <inertia ixx="0.00015" iyy="0.000165" izz="2.1e-05" ixy="-0.0" iyz="0.0" ixz="4.8e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.046353 -0.079 -0.179751" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file:///home/krishna/bumperbot_ws/src/09.06.26_5pm_description/meshes/leg_1_rod_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.046353 -0.079 -0.179751" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file:///home/krishna/bumperbot_ws/src/09.06.26_5pm_description/meshes/leg_1_rod_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="knee_bearing_holder_v1_1">
+  <inertial>
+    <origin xyz="0.002117645657388343 0.004713000000010223 -0.01496802981633905" rpy="0 0 0"/>
+    <mass value="0.052526088047730436"/>
+    <inertia ixx="1e-05" iyy="1.6e-05" izz="1.3e-05" ixy="-0.0" iyz="0.0" ixz="1e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.015786 -0.074287 0.007579" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file:///home/krishna/bumperbot_ws/src/09.06.26_5pm_description/meshes/knee_bearing_holder_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.015786 -0.074287 0.007579" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file:///home/krishna/bumperbot_ws/src/09.06.26_5pm_description/meshes/knee_bearing_holder_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="leg_2_rod_v1_1">
+  <inertial>
+    <origin xyz="0.0259873322679865 -2.7755575615628914e-17 -0.06768226109860206" rpy="0 0 0"/>
+    <mass value="0.019259830127920444"/>
+    <inertia ixx="3e-05" iyy="3.4e-05" izz="5e-06" ixy="-0.0" iyz="0.0" ixz="1.1e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.023177 -0.079 0.026773" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file:///home/krishna/bumperbot_ws/src/09.06.26_5pm_description/meshes/leg_2_rod_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.023177 -0.079 0.026773" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file:///home/krishna/bumperbot_ws/src/09.06.26_5pm_description/meshes/leg_2_rod_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="ankle_bracelet_v1_1">
+  <inertial>
+    <origin xyz="0.005670380472938011 -6.770972671432673e-14 -0.014767385594795734" rpy="0 0 0"/>
+    <mass value="0.02471712296263406"/>
+    <inertia ixx="5e-06" iyy="6e-06" izz="3e-06" ixy="-0.0" iyz="0.0" ixz="1e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.075152 -0.079 0.162138" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file:///home/krishna/bumperbot_ws/src/09.06.26_5pm_description/meshes/ankle_bracelet_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.075152 -0.079 0.162138" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file:///home/krishna/bumperbot_ws/src/09.06.26_5pm_description/meshes/ankle_bracelet_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="ankle_clevis_v1_1">
+  <inertial>
+    <origin xyz="0.14821410874760405 -0.09772449238578708 0.005518689044686387" rpy="0 0 0"/>
+    <mass value="0.02037716964359355"/>
+    <inertia ixx="2e-06" iyy="1e-06" izz="2e-06" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.062472 -0.172475 0.195237" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file:///home/krishna/bumperbot_ws/src/09.06.26_5pm_description/meshes/ankle_clevis_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.062472 -0.172475 0.195237" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file:///home/krishna/bumperbot_ws/src/09.06.26_5pm_description/meshes/ankle_clevis_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="knee_bearing_v1_1">
+  <inertial>
+    <origin xyz="4.748916804364969e-05 -0.004711999999999994 -0.00018823234039732142" rpy="0 0 0"/>
+    <mass value="0.022749323058745264"/>
+    <inertia ixx="2e-06" iyy="4e-06" izz="2e-06" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.015786 -0.083712 0.007579" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file:///home/krishna/bumperbot_ws/src/09.06.26_5pm_description/meshes/knee_bearing_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.015786 -0.083712 0.007579" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file:///home/krishna/bumperbot_ws/src/09.06.26_5pm_description/meshes/knee_bearing_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="ankle_bearing_v1_1">
+  <inertial>
+    <origin xyz="0.14821410874711993 0.22977499999999998 0.005518689044871766" rpy="0 0 0"/>
+    <mass value="0.04520418311639939"/>
+    <inertia ixx="5e-06" iyy="9e-06" izz="5e-06" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.062472 0.150775 0.195237" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file:///home/krishna/bumperbot_ws/src/09.06.26_5pm_description/meshes/ankle_bearing_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.062472 0.150775 0.195237" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file:///home/krishna/bumperbot_ws/src/09.06.26_5pm_description/meshes/ankle_bearing_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="leg_stack_v1_1">
+  <inertial>
+    <origin xyz="-0.0415776889338746 0.0036256159342244326 -0.03833863391779391" rpy="0 0 0"/>
+    <mass value="0.16228632664383524"/>
+    <inertia ixx="0.00015" iyy="0.000512" izz="0.00044" ixy="0.0" iyz="0.0" ixz="-0.000172"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.085742 -0.075375 0.189718" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file:///home/krishna/bumperbot_ws/src/09.06.26_5pm_description/meshes/leg_stack_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.085742 -0.075375 0.189718" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file:///home/krishna/bumperbot_ws/src/09.06.26_5pm_description/meshes/leg_stack_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Rigid 11" type="fixed">
+  <origin xyz="-0.05457 0.048912 0.204524" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="actuator_1_v1_1"/>
+</joint>
+
+<joint name="Rigid 12" type="fixed">
+  <origin xyz="-0.05457 0.109087 0.204524" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="actuator_2_v1_1"/>
+</joint>
+
+<joint name="Hip" type="revolute">
+  <origin xyz="0.0 -0.014499 0.0" rpy="0 0 0"/>
+  <parent link="actuator_2_v1_1"/>
+  <child link="hip_clevis_v1_1"/>
+  <axis xyz="0.0 -1.0 -0.0"/>
+  <limit upper="1.570796" lower="-0.261799" effort="100" velocity="100"/>
+</joint>
+
+<joint name="Rigid 14" type="fixed">
+  <origin xyz="0.008217 -0.015588 -0.024773" rpy="0 0 0"/>
+  <parent link="hip_clevis_v1_1"/>
+  <child link="leg_1_rod_v1_1"/>
+</joint>
+
+<joint name="Knee" type="revolute">
+  <origin xyz="0.062139 -0.004713 -0.18733" rpy="0 0 0"/>
+  <parent link="leg_1_rod_v1_1"/>
+  <child link="knee_bearing_holder_v1_1"/>
+  <axis xyz="-0.0 1.0 -0.0"/>
+  <limit upper="0.034907" lower="-0.523599" effort="100" velocity="100"/>
+</joint>
+
+<joint name="Rigid 17" type="fixed">
+  <origin xyz="0.007391 0.004713 -0.019194" rpy="0 0 0"/>
+  <parent link="knee_bearing_holder_v1_1"/>
+  <child link="leg_2_rod_v1_1"/>
+</joint>
+
+<joint name="Rigid 18" type="fixed">
+  <origin xyz="0.051975 0.0 -0.135365" rpy="0 0 0"/>
+  <parent link="leg_2_rod_v1_1"/>
+  <child link="ankle_bracelet_v1_1"/>
+</joint>
+
+<joint name="Rigid 21" type="fixed">
+  <origin xyz="-0.137624 0.093475 -0.033099" rpy="0 0 0"/>
+  <parent link="ankle_bracelet_v1_1"/>
+  <child link="ankle_clevis_v1_1"/>
+</joint>
+
+<joint name="Rigid 22" type="fixed">
+  <origin xyz="0.0 0.009425 0.0" rpy="0 0 0"/>
+  <parent link="knee_bearing_holder_v1_1"/>
+  <child link="knee_bearing_v1_1"/>
+</joint>
+
+<joint name="Rigid 23" type="fixed">
+  <origin xyz="0.0 -0.32325 0.0" rpy="0 0 0"/>
+  <parent link="ankle_clevis_v1_1"/>
+  <child link="ankle_bearing_v1_1"/>
+</joint>
+
+<joint name="Ankle" type="revolute">
+  <origin xyz="0.148214 0.22615 0.005519" rpy="0 0 0"/>
+  <parent link="ankle_bearing_v1_1"/>
+  <child link="leg_stack_v1_1"/>
+  <axis xyz="-0.0 1.0 -0.0"/>
+  <limit upper="0.261799" lower="-1.134464" effort="100" velocity="100"/>
+</joint>
+
+</robot>
