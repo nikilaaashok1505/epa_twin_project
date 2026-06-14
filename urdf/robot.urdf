@@ -369,6 +369,8 @@
     <child link="hip_clevis_v1_1"/>
     <axis xyz="0.0 -1.0 -0.0"/>
     <limit effort="100" lower="-0.261799" upper="1.570796" velocity="100"/>
+    
+    <dynamics damping="2.0" friction="0.2"/>
   </joint>
   <joint name="Rigid 14" type="fixed">
     <origin rpy="0 0 0" xyz="0.008217 -0.015588 -0.024773"/>
@@ -381,6 +383,7 @@
     <child link="knee_bearing_holder_v1_1"/>
     <axis xyz="-0.0 1.0 -0.0"/>
     <limit effort="100" lower="-0.523599" upper="0.034907" velocity="100"/>
+    <dynamics damping="2.0" friction="0.2"/>
   </joint>
   <joint name="Rigid 17" type="fixed">
     <origin rpy="0 0 0" xyz="0.007391 0.004713 -0.019194"/>
@@ -413,5 +416,6 @@
     <child link="leg_stack_v1_1"/>
     <axis xyz="-0.0 1.0 -0.0"/>
     <limit effort="100" lower="-1.134464" upper="0.261799" velocity="100"/>
+    <dynamics damping="2.0" friction="0.2"/>
   </joint>
 </robot>
