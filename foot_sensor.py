@@ -31,46 +31,47 @@ class FootSensor(Node):
             "leg_stack_v1_1"
         )
 
-    def run(self):
+        self.t = 0
 
-        with mujoco.viewer.launch_passive(
+        self.timer = self.create_timer(
+            0.02,
+            self.publish_position
+        )
+
+    def publish_position(self):
+
+        import math
+
+        self.t += 0.03
+
+        self.data.qpos[0] = 0.5 * math.sin(self.t)
+
+        self.data.qpos[1] = -0.8 * math.sin(self.t)
+
+        self.data.qpos[2] = 0.4 * math.sin(self.t)
+
+        mujoco.mj_step(
             self.model,
             self.data
-        ) as viewer:
+        )
 
-            while viewer.is_running():
+        x, y, z = self.data.xpos[
+            self.foot_id
+        ]
 
-                mujoco.mj_step(
-                    self.model,
-                    self.data
-                )
+        msg = Point()
 
-                x, y, z = self.data.xpos[
-                    self.foot_id
-                ]
+        msg.x = float(x)
 
-                msg = Point()
+        msg.y = float(y)
 
-                msg.x = float(x)
-                msg.y = float(y)
-                msg.z = float(z)
+        msg.z = float(z)
 
-                self.pub.publish(msg)
+        self.pub.publish(msg)
 
-                print(
-                    f"Actual Foot: "
-                    f"X={x:.3f} "
-                    f"Y={y:.3f} "
-                    f"Z={z:.3f}",
-                    end="\r"
-                )
-
-                rclpy.spin_once(
-                    self,
-                    timeout_sec=0
-                )
-
-                viewer.sync()
+        print(
+            f"Actual : {x:.3f} {y:.3f} {z:.3f}"
+        )
 
 
 def main():
@@ -79,10 +80,11 @@ def main():
 
     node = FootSensor()
 
-    node.run()
+    rclpy.spin(node)
 
     rclpy.shutdown()
 
 
 if __name__ == '__main__':
+
     main()

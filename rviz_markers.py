@@ -48,9 +48,11 @@ class MarkerPublisher(Node):
         marker.pose.position.y = msg.y
         marker.pose.position.z = msg.z
 
-        marker.scale.x = 0.03
-        marker.scale.y = 0.03
-        marker.scale.z = 0.03
+        marker.pose.orientation.w = 1.0
+
+        marker.scale.x = 0.08
+        marker.scale.y = 0.08
+        marker.scale.z = 0.08
 
         marker.color.r = 1.0
         marker.color.g = 0.0
@@ -76,9 +78,11 @@ class MarkerPublisher(Node):
         marker.pose.position.y = msg.y
         marker.pose.position.z = msg.z
 
-        marker.scale.x = 0.03
-        marker.scale.y = 0.03
-        marker.scale.z = 0.03
+        marker.pose.orientation.w = 1.0
+
+        marker.scale.x = 0.08
+        marker.scale.y = 0.08
+        marker.scale.z = 0.08
 
         marker.color.r = 0.0
         marker.color.g = 1.0
@@ -100,4 +104,5 @@ def main():
 
 
 if __name__ == '__main__':
+
     main()

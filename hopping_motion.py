@@ -9,17 +9,24 @@ model = mujoco.MjModel.from_xml_path(
 
 data = mujoco.MjData(model)
 
+t = 0.0
+
 with mujoco.viewer.launch_passive(model, data) as viewer:
 
     while viewer.is_running():
 
-        t = time.time()
+        t += 0.03
 
-        data.qpos[0] = 0.6 * math.sin(2*t)
-        data.qpos[1] = -0.4 * math.sin(2*t)
-        data.qpos[2] = 0.3 * math.sin(2*t)
+        # Hip
+        data.qpos[0] = 0.5 * math.sin(t)
 
-        mujoco.mj_forward(model, data)
+        # Knee
+        data.qpos[1] = -0.8 * math.sin(t)
+
+        # Ankle
+        data.qpos[2] = 0.4 * math.sin(t)
+
+        mujoco.mj_step(model, data)
 
         viewer.sync()
 

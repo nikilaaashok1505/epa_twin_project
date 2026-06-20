@@ -1,46 +1,36 @@
 import rclpy
 from rclpy.node import Node
-from sensor_msgs.msg import JointState
+from geometry_msgs.msg import Point
+import math
 
-class DriftDetector(Node):
+actual=None
+pred=None
 
-    def __init__(self):
+def a(msg):
+    global actual
+    actual=msg
 
-        super().__init__('drift_detector')
+def p(msg):
+    global pred
+    pred=msg
 
-        self.reference = None
+    if actual is not None:
 
-        self.create_subscription(
-            JointState,
-            '/joint_states',
-            self.callback,
-            10
+        d=math.sqrt(
+        (actual.x-pred.x)**2+
+        (actual.y-pred.y)**2+
+        (actual.z-pred.z)**2
         )
 
-    def callback(self, msg):
+        print("DRIFT =",round(d,4),"m")
 
-        hip = msg.position[0]
 
-        if self.reference is None:
-            self.reference = hip
-            return
+rclpy.init()
 
-        drift = abs(hip - self.reference)
+node=rclpy.create_node("drift")
 
-        if drift > 0.4:
-            print(
-                f"DRIFT DETECTED: {drift:.3f}"
-            )
+node.create_subscription(Point,"/actual_foot_position",a,10)
 
-def main():
+node.create_subscription(Point,"/predicted_foot_position",p,10)
 
-    rclpy.init()
-
-    node = DriftDetector()
-
-    rclpy.spin(node)
-
-    rclpy.shutdown()
-
-if __name__ == '__main__':
-    main()
+rclpy.spin(node)

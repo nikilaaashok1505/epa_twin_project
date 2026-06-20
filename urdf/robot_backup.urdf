@@ -122,14 +122,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="/home/krishna/epa_twin_project/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="../meshes/base_link.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="/home/krishna/epa_twin_project/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="../meshes/base_link.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -142,14 +142,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0.05457 -0.048912 -0.204524"/>
       <geometry>
-        <mesh filename="/home/krishna/epa_twin_project/meshes/actuator_1_v1_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="../meshes/actuator_1_v1_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0.05457 -0.048912 -0.204524"/>
       <geometry>
-        <mesh filename="/home/krishna/epa_twin_project/meshes/actuator_1_v1_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="../meshes/actuator_1_v1_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -162,14 +162,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0.05457 -0.109087 -0.204524"/>
       <geometry>
-        <mesh filename="/home/krishna/epa_twin_project/meshes/actuator_2_v1_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="../meshes/actuator_2_v1_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0.05457 -0.109087 -0.204524"/>
       <geometry>
-        <mesh filename="/home/krishna/epa_twin_project/meshes/actuator_2_v1_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="../meshes/actuator_2_v1_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -182,14 +182,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0.05457 -0.094588 -0.204524"/>
       <geometry>
-        <mesh filename="/home/krishna/epa_twin_project/meshes/hip_clevis_v1_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="../meshes/hip_clevis_v1_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0.05457 -0.094588 -0.204524"/>
       <geometry>
-        <mesh filename="/home/krishna/epa_twin_project/meshes/hip_clevis_v1_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="../meshes/hip_clevis_v1_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -202,14 +202,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0.046353 -0.079 -0.179751"/>
       <geometry>
-        <mesh filename="/home/krishna/epa_twin_project/meshes/leg_1_rod_v1_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="../meshes/leg_1_rod_v1_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0.046353 -0.079 -0.179751"/>
       <geometry>
-        <mesh filename="/home/krishna/epa_twin_project/meshes/leg_1_rod_v1_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="../meshes/leg_1_rod_v1_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -222,14 +222,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="-0.015786 -0.074287 0.007579"/>
       <geometry>
-        <mesh filename="/home/krishna/epa_twin_project/meshes/knee_bearing_holder_v1_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="../meshes/knee_bearing_holder_v1_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="-0.015786 -0.074287 0.007579"/>
       <geometry>
-        <mesh filename="/home/krishna/epa_twin_project/meshes/knee_bearing_holder_v1_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="../meshes/knee_bearing_holder_v1_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -242,14 +242,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="-0.023177 -0.079 0.026773"/>
       <geometry>
-        <mesh filename="/home/krishna/epa_twin_project/meshes/leg_2_rod_v1_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="../meshes/leg_2_rod_v1_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="-0.023177 -0.079 0.026773"/>
       <geometry>
-        <mesh filename="/home/krishna/epa_twin_project/meshes/leg_2_rod_v1_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="../meshes/leg_2_rod_v1_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -262,14 +262,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="-0.075152 -0.079 0.162138"/>
       <geometry>
-        <mesh filename="/home/krishna/epa_twin_project/meshes/ankle_bracelet_v1_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="../meshes/ankle_bracelet_v1_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="-0.075152 -0.079 0.162138"/>
       <geometry>
-        <mesh filename="/home/krishna/epa_twin_project/meshes/ankle_bracelet_v1_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="../meshes/ankle_bracelet_v1_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -282,14 +282,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0.062472 -0.172475 0.195237"/>
       <geometry>
-        <mesh filename="/home/krishna/epa_twin_project/meshes/ankle_clevis_v1_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="../meshes/ankle_clevis_v1_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0.062472 -0.172475 0.195237"/>
       <geometry>
-        <mesh filename="/home/krishna/epa_twin_project/meshes/ankle_clevis_v1_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="../meshes/ankle_clevis_v1_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -302,14 +302,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="-0.015786 -0.083712 0.007579"/>
       <geometry>
-        <mesh filename="/home/krishna/epa_twin_project/meshes/knee_bearing_v1_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="../meshes/knee_bearing_v1_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="-0.015786 -0.083712 0.007579"/>
       <geometry>
-        <mesh filename="/home/krishna/epa_twin_project/meshes/knee_bearing_v1_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="../meshes/knee_bearing_v1_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -322,14 +322,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0.062472 0.150775 0.195237"/>
       <geometry>
-        <mesh filename="/home/krishna/epa_twin_project/meshes/ankle_bearing_v1_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="../meshes/ankle_bearing_v1_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0.062472 0.150775 0.195237"/>
       <geometry>
-        <mesh filename="/home/krishna/epa_twin_project/meshes/ankle_bearing_v1_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="../meshes/ankle_bearing_v1_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -342,14 +342,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="-0.085742 -0.075375 0.189718"/>
       <geometry>
-        <mesh filename="/home/krishna/epa_twin_project/meshes/leg_stack_v1_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="../meshes/leg_stack_v1_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="-0.085742 -0.075375 0.189718"/>
       <geometry>
-        <mesh filename="/home/krishna/epa_twin_project/meshes/leg_stack_v1_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="../meshes/leg_stack_v1_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>

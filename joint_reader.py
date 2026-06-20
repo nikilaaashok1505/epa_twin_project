@@ -1,18 +1,67 @@
-import mujoco
+import rclpy
+from rclpy.node import Node
+
+from sensor_msgs.msg import JointState
+
+import math
 import time
 
-model = mujoco.MjModel.from_xml_path(
-    "/home/krishna/epa_twin_project/urdf/robot.urdf"
-)
 
-data = mujoco.MjData(model)
+class JointPublisher(Node):
 
-while True:
+    def __init__(self):
 
-    print(
-        f"Hip={data.qpos[0]:.3f}",
-        f"Knee={data.qpos[1]:.3f}",
-        f"Ankle={data.qpos[2]:.3f}"
-    )
+        super().__init__('joint_publisher')
 
-    time.sleep(0.1)
+        self.pub = self.create_publisher(
+            JointState,
+            '/joint_states',
+            10
+        )
+
+        self.t0 = time.time()
+
+        self.timer = self.create_timer(
+            0.02,
+            self.publish_joint
+        )
+
+    def publish_joint(self):
+
+        t = time.time() - self.t0
+
+        msg = JointState()
+
+        msg.name = [
+            'Hip',
+            'Knee',
+            'Ankle'
+        ]
+
+        msg.position = [
+
+            0.3*math.sin(t),
+
+            0.5*math.sin(t+1),
+
+            0.2*math.sin(t+2)
+
+        ]
+
+        self.pub.publish(msg)
+
+
+def main():
+
+    rclpy.init()
+
+    node = JointPublisher()
+
+    rclpy.spin(node)
+
+    rclpy.shutdown()
+
+
+if __name__ == '__main__':
+
+    main()
