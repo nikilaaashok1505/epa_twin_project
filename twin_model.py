@@ -25,7 +25,7 @@ class TwinModel(Node):
         self.t = 0
 
         self.timer = self.create_timer(
-            0.02,
+            1.0,
             self.publish_prediction
         )
 

@@ -34,7 +34,7 @@ class FootSensor(Node):
         self.t = 0
 
         self.timer = self.create_timer(
-            0.02,
+            0.03,
             self.publish_position
         )
 
