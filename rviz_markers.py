@@ -31,63 +31,62 @@ class MarkerPublisher(Node):
             10
         )
 
-    def actual_callback(self, msg):
+    def actual_callback(self,msg):
 
-        marker = Marker()
+        marker=Marker()
 
-        marker.header.frame_id = "world"
-        marker.header.stamp = self.get_clock().now().to_msg()
+        marker.header.frame_id="world"
 
-        marker.ns = "actual"
-        marker.id = 0
+        marker.ns="actual"
 
-        marker.type = Marker.SPHERE
-        marker.action = Marker.ADD
+        marker.id=0
 
-        marker.pose.position.x = msg.x
-        marker.pose.position.y = msg.y
-        marker.pose.position.z = msg.z
+        marker.type=Marker.SPHERE
 
-        marker.pose.orientation.w = 1.0
+        marker.action=Marker.ADD
 
-        marker.scale.x = 0.08
-        marker.scale.y = 0.08
-        marker.scale.z = 0.08
+        marker.pose.position.x=msg.x
+        marker.pose.position.y=msg.y
+        marker.pose.position.z=msg.z
 
-        marker.color.r = 1.0
-        marker.color.g = 0.0
-        marker.color.b = 0.0
-        marker.color.a = 1.0
+        marker.scale.x=0.05
+        marker.scale.y=0.05
+        marker.scale.z=0.05
+
+        marker.color.r=1.0
+        marker.color.g=0.0
+        marker.color.b=0.0
+        marker.color.a=1.0
 
         self.marker_pub.publish(marker)
 
-    def predicted_callback(self, msg):
 
-        marker = Marker()
+    def predicted_callback(self,msg):
 
-        marker.header.frame_id = "world"
-        marker.header.stamp = self.get_clock().now().to_msg()
+        marker=Marker()
 
-        marker.ns = "predicted"
-        marker.id = 1
+        marker.header.frame_id="world"
 
-        marker.type = Marker.SPHERE
-        marker.action = Marker.ADD
+        marker.ns="predicted"
 
-        marker.pose.position.x = msg.x
-        marker.pose.position.y = msg.y
-        marker.pose.position.z = msg.z
+        marker.id=1
 
-        marker.pose.orientation.w = 1.0
+        marker.type=Marker.SPHERE
 
-        marker.scale.x = 0.08
-        marker.scale.y = 0.08
-        marker.scale.z = 0.08
+        marker.action=Marker.ADD
 
-        marker.color.r = 0.0
-        marker.color.g = 1.0
-        marker.color.b = 0.0
-        marker.color.a = 1.0
+        marker.pose.position.x=msg.x
+        marker.pose.position.y=msg.y
+        marker.pose.position.z=msg.z
+
+        marker.scale.x=0.05
+        marker.scale.y=0.05
+        marker.scale.z=0.05
+
+        marker.color.r=0.0
+        marker.color.g=1.0
+        marker.color.b=0.0
+        marker.color.a=1.0
 
         self.marker_pub.publish(marker)
 
@@ -96,13 +95,13 @@ def main():
 
     rclpy.init()
 
-    node = MarkerPublisher()
+    node=MarkerPublisher()
 
     rclpy.spin(node)
 
     rclpy.shutdown()
 
 
-if __name__ == '__main__':
+if __name__=="__main__":
 
     main()
