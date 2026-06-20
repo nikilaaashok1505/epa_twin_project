@@ -1,0 +1,13 @@
+DIGITAL TWIN RESULT
+
+Actual Leg :
+MuJoCo simulated CAD leg.
+
+Predicted Leg :
+Forward kinematics using same CAD geometry.
+
+Drift :
+Distance between actual and predicted foot position.
+
+Conclusion :
+The digital twin successfully tracks the robotic leg behaviour with measurable drift.

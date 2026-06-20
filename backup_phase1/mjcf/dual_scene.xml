@@ -1,0 +1,115 @@
+<mujoco model="epa_dual_twin">
+  <compiler angle="radian"/>
+  <option gravity="0 0 -9.81" timestep="0.002" integrator="RK4"/>
+
+  <visual>
+    <headlight ambient="0.4 0.4 0.4"/>
+  </visual>
+
+  <asset>
+    <texture type="skybox" builtin="gradient" rgb1="0.3 0.5 0.7"
+             rgb2="0.9 0.9 0.9" width="512" height="512"/>
+    <texture name="grid" type="2d" builtin="checker"
+             rgb1="0.8 0.8 0.8" rgb2="0.7 0.7 0.7"
+             width="300" height="300"/>
+    <material name="grid_mat" texture="grid" texrepeat="5 5"
+              reflectance="0.1"/>
+
+    <mesh name="base_link_actual" content_type="model/stl" file="/home/krishna/epa_twin_project/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="actuator_1_v1_1_actual" content_type="model/stl" file="/home/krishna/epa_twin_project/meshes/actuator_1_v1_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="actuator_2_v1_1_actual" content_type="model/stl" file="/home/krishna/epa_twin_project/meshes/actuator_2_v1_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="hip_clevis_v1_1_actual" content_type="model/stl" file="/home/krishna/epa_twin_project/meshes/hip_clevis_v1_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="leg_1_rod_v1_1_actual" content_type="model/stl" file="/home/krishna/epa_twin_project/meshes/leg_1_rod_v1_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="knee_bearing_holder_v1_1_actual" content_type="model/stl" file="/home/krishna/epa_twin_project/meshes/knee_bearing_holder_v1_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="leg_2_rod_v1_1_actual" content_type="model/stl" file="/home/krishna/epa_twin_project/meshes/leg_2_rod_v1_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="ankle_bracelet_v1_1_actual" content_type="model/stl" file="/home/krishna/epa_twin_project/meshes/ankle_bracelet_v1_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="ankle_clevis_v1_1_actual" content_type="model/stl" file="/home/krishna/epa_twin_project/meshes/ankle_clevis_v1_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="knee_bearing_v1_1_actual" content_type="model/stl" file="/home/krishna/epa_twin_project/meshes/knee_bearing_v1_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="ankle_bearing_v1_1_actual" content_type="model/stl" file="/home/krishna/epa_twin_project/meshes/ankle_bearing_v1_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="leg_stack_v1_1_actual" content_type="model/stl" file="/home/krishna/epa_twin_project/meshes/leg_stack_v1_1.stl" scale="0.001 0.001 0.001"/>
+  
+
+    <mesh name="base_link_predicted" file="/home/krishna/epa_twin_project/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="actuator_1_v1_1_predicted" file="/home/krishna/epa_twin_project/meshes/actuator_1_v1_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="actuator_2_v1_1_predicted" file="/home/krishna/epa_twin_project/meshes/actuator_2_v1_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="hip_clevis_v1_1_predicted" file="/home/krishna/epa_twin_project/meshes/hip_clevis_v1_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="leg_1_rod_v1_1_predicted" file="/home/krishna/epa_twin_project/meshes/leg_1_rod_v1_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="knee_bearing_holder_v1_1_predicted" file="/home/krishna/epa_twin_project/meshes/knee_bearing_holder_v1_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="leg_2_rod_v1_1_predicted" file="/home/krishna/epa_twin_project/meshes/leg_2_rod_v1_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="ankle_bracelet_v1_1_predicted" file="/home/krishna/epa_twin_project/meshes/ankle_bracelet_v1_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="ankle_clevis_v1_1_predicted" file="/home/krishna/epa_twin_project/meshes/ankle_clevis_v1_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="knee_bearing_v1_1_predicted" file="/home/krishna/epa_twin_project/meshes/knee_bearing_v1_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="ankle_bearing_v1_1_predicted" file="/home/krishna/epa_twin_project/meshes/ankle_bearing_v1_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="leg_stack_v1_1_predicted" file="/home/krishna/epa_twin_project/meshes/leg_stack_v1_1.stl" scale="0.001 0.001 0.001"/>
+  
+  </asset>
+
+  <worldbody>
+    <light directional="true" pos="0 0.25 2" dir="0 0 -1"
+           diffuse="0.8 0.8 0.8"/>
+    <!-- Floor placed at tested correct height for foot clearance -->
+    <geom name="floor" type="plane" size="3 3 0.05"
+          pos="0 0.25 -0.21" material="grid_mat"/>
+
+    <!-- ACTUAL LEG (silver, noisy/drifting) -->
+
+    <geom type="mesh" rgba="0.7 0.7 0.7 1" mesh="base_link_actual"/>
+    <geom type="mesh" rgba="0.7 0.7 0.7 1" mesh="actuator_1_v1_1_actual"/>
+    <geom type="mesh" rgba="0.7 0.7 0.7 1" mesh="actuator_2_v1_1_actual"/>
+    <body name="hip_clevis_v1_1_actual" pos="-0.05457 0.094588 0.204524">
+      <inertial pos="0.0392011 -0.015588 -0.1019" quat="0.983604 0 -0.18034 0" mass="0.0915237" diaginertia="0.000584301 0.000581119 1.18179e-05"/>
+      <joint name="Hip_actual" pos="0 0 0" axis="0 -1 0" range="-0.261799 1.5708" actuatorfrcrange="-100 100" damping="2" frictionloss="0.2"/>
+      <geom pos="0.05457 -0.094588 -0.204524" type="mesh" rgba="0.7 0.7 0.7 1" mesh="hip_clevis_v1_1_actual"/>
+      <geom pos="0.05457 -0.094588 -0.204524" type="mesh" rgba="0.7 0.7 0.7 1" mesh="leg_1_rod_v1_1_actual"/>
+      <body name="knee_bearing_holder_v1_1_actual" pos="0.070356 -0.020301 -0.212103">
+        <inertial pos="0.110671 0.0561601 -0.0673519" quat="0.33562 0.428228 0.728259 0.416675" mass="0.184834" diaginertia="0.00662782 0.00590616 0.00085757"/>
+        <joint name="Knee_actual" pos="0 0 0" axis="0 1 0" range="-0.523599 0.034907" actuatorfrcrange="-100 100" damping="2" frictionloss="0.2"/>
+        <geom pos="-0.015786 -0.074287 0.007579" quat="1 0 0 0" type="mesh" rgba="0.7 0.7 0.7 1" mesh="knee_bearing_holder_v1_1_actual"/>
+        <geom pos="-0.015786 -0.074287 0.007579" type="mesh" rgba="0.7 0.7 0.7 1" mesh="leg_2_rod_v1_1_actual"/>
+        <geom pos="-0.015786 -0.074287 0.007579" quat="1 0 0 0" type="mesh" rgba="0.7 0.7 0.7 1" mesh="ankle_bracelet_v1_1_actual"/>
+        <geom pos="-0.015786 -0.074287 0.007579" quat="1 0 0 0" type="mesh" rgba="0.7 0.7 0.7 1" mesh="ankle_clevis_v1_1_actual"/>
+        <geom pos="-0.015786 -0.074287 0.007579" quat="1 0 0 0" type="mesh" rgba="0.7 0.7 0.7 1" mesh="ankle_bearing_v1_1_actual"/>
+        <geom pos="-0.015786 -0.074287 0.007579" quat="1 0 0 0" type="mesh" rgba="0.7 0.7 0.7 1" mesh="knee_bearing_v1_1_actual"/>
+        <body name="leg_stack_v1_1_actual" pos="0.069956 0.001088 -0.182139">
+          <inertial pos="-0.0415777 0.00362562 -0.0383386" quat="0 0.537784 0 0.843083" mass="0.162286" diaginertia="0.000519964 0.000512 7.00356e-05"/>
+          <joint name="Ankle_actual" pos="0 0 0" axis="0 1 0" range="-1.13446 0.261799" actuatorfrcrange="-100 100" damping="2" frictionloss="0.2"/>
+          <geom pos="-0.085742 -0.075375 0.189718" quat="1 0 0 0" type="mesh" rgba="0.7 0.7 0.7 1" mesh="leg_stack_v1_1_actual"/>
+        </body>
+      </body>
+    </body>
+  
+
+    <!-- PREDICTED LEG (blue, clean twin) -->
+
+    <body name="predicted_root_offset" pos="0 1.5 0">
+
+    <geom type="mesh" rgba="0.25 0.55 0.95 0.55" mesh="base_link_predicted"/>
+    <geom type="mesh" rgba="0.25 0.55 0.95 0.55" mesh="actuator_1_v1_1_predicted"/>
+    <geom type="mesh" rgba="0.25 0.55 0.95 0.55" mesh="actuator_2_v1_1_predicted"/>
+    <body name="hip_clevis_v1_1_predicted" pos="-0.05457 0.094588 0.204524">
+      <inertial pos="0.0392011 -0.015588 -0.1019" quat="0.983604 0 -0.18034 0" mass="0.0915237" diaginertia="0.000584301 0.000581119 1.18179e-05"/>
+      <joint name="Hip_predicted" pos="0 0 0" axis="0 -1 0" range="-0.261799 1.5708" actuatorfrcrange="-100 100" damping="2" frictionloss="0.2"/>
+      <geom pos="0.05457 -0.094588 -0.204524" type="mesh" rgba="0.25 0.55 0.95 0.55" mesh="hip_clevis_v1_1_predicted"/>
+      <geom pos="0.05457 -0.094588 -0.204524" type="mesh" rgba="0.25 0.55 0.95 0.55" mesh="leg_1_rod_v1_1_predicted"/>
+      <body name="knee_bearing_holder_v1_1_predicted" pos="0.070356 -0.020301 -0.212103">
+        <inertial pos="0.110671 0.0561601 -0.0673519" quat="0.33562 0.428228 0.728259 0.416675" mass="0.184834" diaginertia="0.00662782 0.00590616 0.00085757"/>
+        <joint name="Knee_predicted" pos="0 0 0" axis="0 1 0" range="-0.523599 0.034907" actuatorfrcrange="-100 100" damping="2" frictionloss="0.2"/>
+        <geom pos="-0.015786 -0.074287 0.007579" quat="1 0 0 0" type="mesh" rgba="0.25 0.55 0.95 0.55" mesh="knee_bearing_holder_v1_1_predicted"/>
+        <geom pos="-0.015786 -0.074287 0.007579" type="mesh" rgba="0.25 0.55 0.95 0.55" mesh="leg_2_rod_v1_1_predicted"/>
+        <geom pos="-0.015786 -0.074287 0.007579" quat="1 0 0 0" type="mesh" rgba="0.25 0.55 0.95 0.55" mesh="ankle_bracelet_v1_1_predicted"/>
+        <geom pos="-0.015786 -0.074287 0.007579" quat="1 0 0 0" type="mesh" rgba="0.25 0.55 0.95 0.55" mesh="ankle_clevis_v1_1_predicted"/>
+        <geom pos="-0.015786 -0.074287 0.007579" quat="1 0 0 0" type="mesh" rgba="0.25 0.55 0.95 0.55" mesh="ankle_bearing_v1_1_predicted"/>
+        <geom pos="-0.015786 -0.074287 0.007579" quat="1 0 0 0" type="mesh" rgba="0.25 0.55 0.95 0.55" mesh="knee_bearing_v1_1_predicted"/>
+        <body name="leg_stack_v1_1_predicted" pos="0.069956 0.001088 -0.182139">
+          <inertial pos="-0.0415777 0.00362562 -0.0383386" quat="0 0.537784 0 0.843083" mass="0.162286" diaginertia="0.000519964 0.000512 7.00356e-05"/>
+          <joint name="Ankle_predicted" pos="0 0 0" axis="0 1 0" range="-1.13446 0.261799" actuatorfrcrange="-100 100" damping="2" frictionloss="0.2"/>
+          <geom pos="-0.085742 -0.075375 0.189718" quat="1 0 0 0" type="mesh" rgba="0.25 0.55 0.95 0.55" mesh="leg_stack_v1_1_predicted"/>
+        </body>
+      </body>
+    </body>
+  
+    </body>
+
+
+  </worldbody>
+</mujoco>
